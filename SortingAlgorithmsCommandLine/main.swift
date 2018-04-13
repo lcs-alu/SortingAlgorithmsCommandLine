@@ -27,9 +27,11 @@ let input = readLine()
 var numbers : [Int] = []
 
 // Populate the array
-for _ in 1...10 {
-    numbers.append( random(between: 1, and: 50) )
-}
+// Generate a series of number in the array
+numbers.append(9)
+numbers.append(8)
+numbers.append(7)
+numbers.append(6)
 
 // Show the user the contents of the array
 print("-----")
@@ -42,6 +44,25 @@ print("-----")
 // ----------- Write code to sort the array here -----------
 print("Now sorting the array...")
 
+// Loop 3 times to sort a list with 4 values
+for _ in 1...numbers.count - 1 {
+
+    //// Loop and find the minimum value and the index of the minimum value
+    let minimumValue = numbers [0] // Assume the value is the first number in the array
+    var minimumIndex = 0 // The index is 0
+    // Compare two numbers next to each other, and switch the higher one to the higher number count
+    for i in 0...numbers.count - 1 - 1 {
+        if numbers[i] > numbers[i+1] {
+            let temporaryValue = numbers[i]
+            numbers[i] = numbers[i+1]
+            numbers[i+1] = temporaryValue
+        }
+    }
+
+}
+
+
+
 // ----------- Final part of the program, show the sorted list -----------
 print("-----")
 print("The contents of the sorted list:")
@@ -49,5 +70,6 @@ for i in 0...numbers.count - 1 {
     print("Index \(i), value: \(numbers[i])")
 }
 print("-----")
+
 
 
